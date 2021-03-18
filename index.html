@@ -64,7 +64,7 @@
 
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
 
-    <a id="output"></a>
+    <a id="output" href=""></a>
 
     <script>
         var firebaseConfig = {
@@ -159,6 +159,7 @@
         db.collection("Instance").doc(id).onSnapshot((doc) => {
             var data = doc.data().text;
             document.getElementById("output").textContent = "Calling" + data;
+            document.getElementById('output').href = "tel:+" + data
         })
     }
 
