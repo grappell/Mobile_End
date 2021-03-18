@@ -160,6 +160,7 @@
             var data = doc.data().text;
             document.getElementById("output").textContent = "Calling " + data + "...";
             document.getElementById('output').href = "tel:+" + data
+            document.getElementById("output").click()
         })
     }
 
