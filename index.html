@@ -64,6 +64,8 @@
 
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
 
+    <p id="output"></p>
+
     <script>
         var firebaseConfig = {
             apiKey: "AIzaSyBvhFHgrJc2KjbDO7gNnP4turAPIfUQPnE",
@@ -76,7 +78,6 @@
         };
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
-
     </script>
 <!-- ______________________________________________________________ -->
 
@@ -142,6 +143,7 @@
             video.src = "";
             localStream.getTracks()[0].stop();
             canvasElement.style.display = "none";
+            lissenForRequest(qrCode)
             return
         } else {
             outputMessage.hidden = false;
@@ -150,6 +152,16 @@
         }
         requestAnimationFrame(tick);
     }
+
+
+    function lissenForRequest (id) {
+        var db = firebase.firestore()
+        db.collection("Instance").doc(id).onSnapshot((doc) => {
+            var data = doc.data().text;
+            document.getElementById("output").textContent = data;
+        })
+    }
+
     </script>
 
 </body>
