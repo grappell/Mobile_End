@@ -158,9 +158,9 @@
         var db = firebase.firestore()
         db.collection("Instance").doc(id).onSnapshot((doc) => {
             var data = doc.data().text;
-            document.getElementById("output").textContent = "Calling " + data + "...";
-            document.getElementById('output').href = "tel:+" + data
-            document.getElementById("output").click()
+            document.getElementById("output").textContent = "Call " + data;
+            document.getElementById('output').href = "tel:+" + data;
+            document.getElementById("output").click();
         })
     }
 
