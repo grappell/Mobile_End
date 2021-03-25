@@ -64,6 +64,8 @@
 
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
 
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
     <a id="output" href=""></a>
 
     <script>
@@ -107,7 +109,6 @@
         canvas.stroke();
     }
 
-    // Use facingMode: environment to attemt to get the front camera on phones
     navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } }).then(function(stream) {
         video.srcObject = stream;
         localStream = stream;
@@ -160,7 +161,7 @@
             var data = doc.data().text;
             document.getElementById("output").textContent = "Call " + data;
             document.getElementById('output').href = "tel:+" + data;
-            document.getElementById("output").click();
+            $("#output").click();
         })
     }
 
