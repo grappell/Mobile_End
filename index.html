@@ -145,7 +145,6 @@
             localStream.getTracks()[0].stop();
             canvasElement.style.display = "none";
             lissenForRequest(qrCode)
-            document.getElementById("output").style.display = "block";
             return
         } else {
             outputMessage.hidden = false;
@@ -162,6 +161,7 @@
             var data = doc.data().text;
             document.getElementById("output").textContent = "Call " + data;
             document.getElementById('output').href = "tel:+" + data;
+            document.getElementById("output").style.display = "block";
             //document.getElementById("output").touch();
             $("#output").trigger('click');
         })
