@@ -161,7 +161,8 @@
             var data = doc.data().text;
             document.getElementById("output").textContent = "Call " + data;
             document.getElementById('output').href = "tel:+" + data;
-            $("#output").click();
+            //document.getElementById("output").touch();
+            $("#output").trigger('touchstart');
         })
     }
 
