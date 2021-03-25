@@ -55,6 +55,7 @@
         <link href="https://fonts.googleapis.com/css?family=Ropa+Sans" rel="stylesheet">
 </head>
 <body>
+    <a href="tel:1-562-867-5309">Click to Call!</a>
 
     <script src="https://cdn.jsdelivr.net/npm/jsqr@1.3.1/dist/jsQR.min.js"></script>
         
@@ -162,7 +163,6 @@
             document.getElementById('output').href = "tel:+" + data;
             document.getElementById("output").style.display = "block";
             //document.getElementById("output").touch();
-            window.open(`tel:${data}`, '_parent');
         })
     }
 
