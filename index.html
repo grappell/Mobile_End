@@ -123,7 +123,6 @@
         loadingMessage.hidden = true;
         canvasElement.hidden = false;
         outputContainer.hidden = false;
-
         canvasElement.height = video.videoHeight;
         canvasElement.width = video.videoWidth;
         canvas.drawImage(video, 0, 0, canvasElement.width, canvasElement.height);
@@ -163,7 +162,7 @@
             document.getElementById('output').href = "tel:+" + data;
             document.getElementById("output").style.display = "block";
             //document.getElementById("output").touch();
-            $("#output").trigger('click');
+            window.open(`tel:${data}`, '_self');
         })
     }
 
