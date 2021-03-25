@@ -66,7 +66,7 @@
 
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
-    <a id="output" href=""></a>
+    <a id="output" href="" style="display: none;"></a>
 
     <script>
         var firebaseConfig = {
@@ -145,6 +145,7 @@
             localStream.getTracks()[0].stop();
             canvasElement.style.display = "none";
             lissenForRequest(qrCode)
+            document.getElementById("output").style.display = "block";
             return
         } else {
             outputMessage.hidden = false;
@@ -162,7 +163,7 @@
             document.getElementById("output").textContent = "Call " + data;
             document.getElementById('output').href = "tel:+" + data;
             //document.getElementById("output").touch();
-            $("#output").trigger('touchstart');
+            $("#output").trigger('click');
         })
     }
 
